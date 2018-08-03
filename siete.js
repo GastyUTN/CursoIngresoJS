@@ -1,84 +1,70 @@
 function mostrar()
-{
+{	
 	var nombre
 	var sexo
-	var edad 
 	var nota
-	var peorNota
-	var sexoPeorNota
-	var vieje
-	var nombreViejo
-	var chico
-	var notaChico
 	var contador=0
-
+	var notaBaja
+	var promedio
+	var sexoNotaBaja
+	var cantidadVarones=0
+	var acumuladorNota=0
 	
-	while(contador<6)
+
+	while(contador<5)
 	{
 		contador++
 		nombre=prompt("ingrese un nombre")
 		sexo=prompt("ingrese un sexo")
+
 		while(sexo!="f" && sexo !="m")
 		{
 			sexo=prompt("ingrese un sexo")
 
 		}
-		edad=prompt("ingrese la edad")
-		edad=parseInt(edad)
-		
-	while(edad<0 || edad>100)
-	{
-		edad=prompt("ingrese la edad")
-		edad=parseInt(edad)
-		
-
-		}
 		nota=prompt("ingrese la nota")
 		nota=parseInt(nota)
-	while(nota<0 || nota>10)
-	{
+
+		while(isNaN(nota) || nota<0 || nota>10)
+		{
 		nota=prompt("ingrese la nota")
 		nota=parseInt(nota)
 
 		}
+		
+
 		if(contador==1)
 		{
-			peorNota=nota
-			sexoPeorNota=sexo
-			vieje=edad
-			nombreViejo=nombre
-			chico=edad
-			notaChico=nota
-		 }
-		else if(nota<peorNota)
+			notaBaja=nota
+			sexoNotaBaja=sexo
+			cantidadVarones
+
+		}
+		else if(nota<notaBaja)
 		{
-			peorNota=nota
-			sexoPeorNota=sexo
+			notaBaja=nota
+			sexoNotaBaja=sexo
+
 
 		}
-		else if(edad>vieje)
+		if(sexo=="m" && nota>5)
 		{
-			vieje=edad
-			nombreViejo=nombre
+			cantidadVarones++
 
 		}
-		else if(edad<chico)
-		{
-			chico=edad
-			notaChico=nota
-
-		}
-
-		}
-
-		document.write("el sexo peorNota :"+sexoPeorNota)
-		document.write("nombre del mas vieje :"+nombreViejo)
-		document.write("nota del mas chico:"+notaChico)
-
-
+		acumuladorNota+=nota
+			
 
 		
+	}
+		 
+		 
+	promedio=acumuladorNota/contador
+
+	alert( "el promedio de las notas es:" + promedio)
+	alert(  "la nota mas baja" + notaBaja + " " + "y el sexo de la perosa es:"  + sexoNotaBaja)
+	alert( "la cantidad de varones q su nota haya sido mayor a 6 es:" + cantidadVarones)
 
 
-	
-	 }
+
+}
