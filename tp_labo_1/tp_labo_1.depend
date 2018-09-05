@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1536190579 source:c:\users\gaston\desktop\tp_labo_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Biblioteca.h"
+
+1536190579 c:\users\gaston\desktop\tp_labo_1\biblioteca.h
+
